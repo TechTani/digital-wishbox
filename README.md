@@ -21,3 +21,7 @@ Edit `src/main.jsx`:
 Edit `src/styles.css` to change the colors, spacing, typography, and responsive behavior.
 
 The bear illustrations are original inline SVG artwork so the project does not depend on an external image asset.
+
+
+## Dudu & Bubu images
+The site now bundles all 10 uploaded Dudu & Bubu images locally. The ten reason cards cycle through ten different images; the hero and final love section also use Dudu & Bubu artwork.

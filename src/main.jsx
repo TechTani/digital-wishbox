@@ -2,82 +2,29 @@ import React, { useEffect, useRef, useState } from "react";
 import { createRoot } from "react-dom/client";
 import { ChevronDown, Heart, Music2, Volume2, VolumeX } from "lucide-react";
 import "./styles.css";
+import duduBubu01 from "./assets/dudu-bubu-01.jpg";
+import duduBubu02 from "./assets/dudu-bubu-02.jpg";
+import duduBubu03 from "./assets/dudu-bubu-03.jpg";
+import duduBubu04 from "./assets/dudu-bubu-04.jpg";
+import duduBubu05 from "./assets/dudu-bubu-05.jpg";
+import duduBubu06 from "./assets/dudu-bubu-06.jpg";
+import duduBubu07 from "./assets/dudu-bubu-07.jpg";
+import duduBubu08 from "./assets/dudu-bubu-08.jpg";
+import duduBubu09 from "./assets/dudu-bubu-09.jpg";
+import duduBubu10 from "./assets/dudu-bubu-10.jpg";
 
 const reasons = [
-  {
-    text: "You always know how to make me smile, even on my darkest days.",
-    art: "hug"
-  },
-  {
-    text: "The way you look at me makes me feel like the most special person in the world.",
-    art: "look"
-  },
-  {
-    text: "You give the best hugs that instantly melt all my worries away.",
-    art: "hug2"
-  },
-  {
-    text: "You make even the smallest moments feel magical and unforgettable.",
-    art: "kiss"
-  },
-  {
-    text: "You support my dreams and always believe in me, even when I doubt myself.",
-    art: "support"
-  },
-  {
-    text: "Your laugh is my absolute favorite sound in the whole universe.",
-    art: "laugh"
-  }
+  { text: "You always know how to make me smile, even on my darkest days.", image: duduBubu01 },
+  { text: "The way you look at me makes me feel like the most special person in the world.", image: duduBubu02 },
+  { text: "You give the best hugs that instantly melt all my worries away.", image: duduBubu03 },
+  { text: "You make even the smallest moments feel magical and unforgettable.", image: duduBubu04 },
+  { text: "You support my dreams and always believe in me, even when I doubt myself.", image: duduBubu05 },
+  { text: "Your laugh is my absolute favorite sound in the whole universe.", image: duduBubu06 },
+  { text: "Even doing ordinary things with you feels special.", image: duduBubu07 },
+  { text: "You are my favorite person to spend quiet moments with.", image: duduBubu08 },
+  { text: "You make me feel loved, safe, and completely understood.", image: duduBubu09 },
+  { text: "No matter what happens, I will always choose you. ❤️", image: duduBubu10 }
 ];
-
-function BearArt({ type = "hug" }) {
-  const brown = "#d99b7d";
-  const cream = "#fffaf6";
-  const line = "#6f3926";
-  const blush = "#f6bdc4";
-
-  const variants = {
-    hug: { bearX: 150, whiteX: 92, brownHead: true },
-    look: { bearX: 148, whiteX: 91, brownHead: true },
-    hug2: { bearX: 145, whiteX: 98, brownHead: true },
-    kiss: { bearX: 146, whiteX: 91, brownHead: true },
-    support: { bearX: 145, whiteX: 92, brownHead: true },
-    laugh: { bearX: 147, whiteX: 93, brownHead: true }
-  };
-  const v = variants[type] || variants.hug;
-
-  return (
-    <svg className="bear-art" viewBox="0 0 260 210" aria-hidden="true">
-      <g stroke={line} strokeWidth="5" strokeLinecap="round" strokeLinejoin="round">
-        <circle cx={v.bearX+4} cy="67" r="38" fill={brown}/>
-        <circle cx={v.bearX-19} cy="35" r="13" fill={brown}/>
-        <circle cx={v.bearX+25} cy="35" r="13" fill={brown}/>
-        <circle cx={v.bearX+4} cy="67" r="32" fill={brown}/>
-        <ellipse cx={v.bearX+7} cy="124" rx="35" ry="52" fill={brown}/>
-        <circle cx={v.bearX-6} cy="63" r="5" fill={line} stroke="none"/>
-        <circle cx={v.bearX+17} cy="63" r="5" fill={line} stroke="none"/>
-        <circle cx={v.bearX+2} cy="76" r="6" fill="#f1c768" stroke="none"/>
-
-        <circle cx={v.whiteX} cy="80" r="43" fill={cream}/>
-        <circle cx={v.whiteX-25} cy="45" r="14" fill={cream}/>
-        <circle cx={v.whiteX+22} cy="45" r="14" fill={cream}/>
-        <ellipse cx={v.whiteX-2} cy="137" rx="38" ry="54" fill={cream}/>
-        <circle cx={v.whiteX-13} cy="76" r="5" fill={line} stroke="none"/>
-        <circle cx={v.whiteX+12} cy="76" r="5" fill={line} stroke="none"/>
-        <ellipse cx={v.whiteX} cy="91" rx="6" ry="8" fill="#f17b83" stroke="none"/>
-        <circle cx={v.whiteX-16} cy="93" r="7" fill={blush} stroke="none" opacity=".9"/>
-        <circle cx={v.whiteX+16} cy="93" r="7" fill={blush} stroke="none" opacity=".9"/>
-
-        <path d="M115 115 Q138 120 151 106" fill="none"/>
-        <path d="M177 112 Q193 121 206 112" fill="none"/>
-        <path d="M108 132 Q88 142 77 131" fill="none"/>
-        <path d="M176 137 Q194 151 211 143" fill="none"/>
-      </g>
-      <path d="M45 35 C38 19 60 10 68 27 C76 10 98 19 89 37 C80 51 62 58 45 35Z" fill="#ff6e79"/>
-      <path d="M214 26 C208 13 224 8 231 21 C238 8 253 15 247 29 C241 39 225 43 214 26Z" fill="#ff6e79"/>
-    </svg>
-  );
-}
 
 function Cloud({ className = "" }) {
   return <div className={`cloud ${className}`}><span/><span/><span/></div>;
@@ -151,9 +98,9 @@ function App() {
       <main>
         <section className="hero section">
           <Cloud className="c1"/><Cloud className="c2"/><Cloud className="c3"/>
-          <div className="hero-art"><BearArt type="hug"/></div>
+          <div className="hero-art photo-art"><img src={duduBubu04} alt="Dudu and Bubu" /></div>
           <h1>Reasons Why I<br/><span>Love You</span> <span className="sparkle">💖</span></h1>
-          <p className="from">From <b>BUBU</b> to <b>DUDU</b></p>
+          <p className="from">From <b>Aditya</b> to <b>Samyuktha</b></p>
           <button className="primary" onClick={begin}>Start Exploring <ChevronDown/></button>
         </section>
 
@@ -163,7 +110,7 @@ function App() {
           <div className="reason-stage">
             <article className="reason-card" key={reason}>
               <div className="number">#{reason + 1}</div>
-              <BearArt type={reasons[reason].art}/>
+              <img className="reason-image" src={reasons[reason].image} alt="Dudu and Bubu" />
               <p>{reasons[reason].text}</p>
               <small>♡ Swipe me!</small>
             </article>
@@ -192,7 +139,7 @@ function App() {
             <div className="love-answer">
               {love < 25 ? "A little bit..." : love < 55 ? "A whole lot! 💗" : love < 80 ? "To the moon! 🚀" : "INFINITY! 💖"}
             </div>
-            <div className="love-art"><BearArt type="kiss"/></div>
+            <div className="love-art photo-art"><img src={duduBubu10} alt="Dudu and Bubu" /></div>
             <div className="infinity">{love >= 80 ? "INFINITY! 💖" : `${love}% 💗`}</div>
           </div>
           <button className="primary" onClick={finalSurprise}>Final Surprise <ChevronDown/></button>
@@ -213,7 +160,7 @@ function App() {
           </div>
           <div className="forever">
             <h2>Forever &<br/>Always ❤️</h2>
-            <p>TANI ❤️ LOVE</p>
+            <p>Aditya ❤️ Samyuktha</p>
           </div>
         </section>
       </main>
