@@ -100,7 +100,7 @@ function App() {
           <Cloud className="c1"/><Cloud className="c2"/><Cloud className="c3"/>
           <div className="hero-art photo-art"><img src={duduBubu04} alt="Dudu and Bubu" /></div>
           <h1>Reasons Why I<br/><span>Love You</span> <span className="sparkle">💖</span></h1>
-          <p className="from">From <b>Aditya</b> to <b>Samyuktha</b></p>
+          <p className="from">From <b>BUBU</b> to <b>DUDU</b></p>
           <button className="primary" onClick={begin}>Start Exploring <ChevronDown/></button>
         </section>
 
@@ -160,7 +160,7 @@ function App() {
           </div>
           <div className="forever">
             <h2>Forever &<br/>Always ❤️</h2>
-            <p>Aditya ❤️ Samyuktha</p>
+            <p>BUBU ❤️ DUDU</p>
           </div>
         </section>
       </main>
